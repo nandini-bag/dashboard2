@@ -1,13 +1,208 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
+html{
+    font-size: 62.5%;
+}
+body{
+  width: 100%;
+  height: 100vh;
+}
+/* ========== colors ==========  */
+:root{
+  --aside-color:  #367c88;
+  --icons-color: #303d34;
+  --hover-color: #6ca39c;
+  --logo-color: #d9dbda;
+  }
+a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* ================= header part start ================ */
+.header{
+    background: #367681;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20rem auto;
+    align-items: center;
+    line-height: 5.5rem;
+    position: relative;
+}
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.header-icons{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2rem;
+}
+.logo-icon{
+    color: #58bbcc;
+    font-size: 4rem;
+  }
+  .logo-name{
+    color: var(--logo-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+}
+/* =========== (Content Part) ============ */
+#sidebar{
+    background: var(--aside-color);
+    position: absolute;
+    width: 20rem;
+    height: 77.7rem;
+    top: 5.5rem;
+    z-index: 1;
+  }
+  .hide-show{
+    width: 20rem;
+    transform: translateY(0);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
+    transition: all .1s linear;
+  }
+  /* =========== Search Part ============ */
+  .search-box{
+    padding-top: 2.8rem;  
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(20px,1fr));
+    align-items: center;
+  }
+  .input-box{
+    line-height: 3rem;
+    border: none;
+    outline: none;
+    width: 12rem;
+    padding: 0px 10px 0px 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: transparent;
+    border-bottom: 1px solid #464646;
+    text-transform: capitalize;
+    letter-spacing: .01rem;
+    color: #090a09;
+  }
+  .input-box:hover, .input-box:active {
+    background: var(--logo-color);
+  }
+  .search-icon{
+    margin-right: 2rem;
+    font-weight: 700;
+  }
+/* =========== Sidebar-menu Part ============ */
+ul{
+  padding-block: 1rem;
+  list-style: none;
+}
+ul li{
+  line-height: 5rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 2rem;
+}
+.menu-list ul li:hover{
+  color: #131f1f;
+  cursor: pointer;
+  text-decoration: underline;
+  background: var(--hover-color);
+}
+ul li a{
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.icons{
+  margin-right: 2.2rem;
+  font-size: 2rem;
+  min-width: 2rem;
+  cursor: pointer;
+  color: var(--icons-color);
+}
+span{
+  color: #090a09;
+}
+/* =========== sidebar-bottom Part ============ */
+.bottom-content li:hover{
+  background: var(--hover-color);
+  cursor: pointer;
+  }  
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ================= main part start ================ */
+.main{
+  width: 100%;
+}
+#main-container{
+    background: #d8d8d8;
+    width: calc(100%-20rem);
+    padding-inline: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+#main-container h4{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+h2{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+#cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 2.5rem;
+}
+.align{
+  margin-left: 20rem;
+}
+.card{
+    color: #d9dbda;
+    background: linear-gradient(to right, #367681, #83c7ab);
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    line-height: 5rem;
+    border-radius: .5rem;    
+}
+.card > h2{
+  text-transform: uppercase;
+}
+.card > .icons{
+  opacity: .5;
+  color:var(--logo-color);
+  font-size: 3rem;
+  margin-top: 5rem;
+}
+#charts-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+    gap: 5rem;
+    justify-content: space-around;
+    align-items: center;
+}
+#charts-container h2{
+    text-decoration: underline;
 }
